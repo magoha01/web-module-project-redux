@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 const Movie = (props) => {
     const { id } = useParams();
     const { push } = useHistory();
@@ -48,9 +49,9 @@ const Movie = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    return {
+    return ({
         movies: state.movies
-    }
+    })
 };
 
 export default connect(mapStateToProps)(Movie);
